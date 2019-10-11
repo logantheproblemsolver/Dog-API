@@ -9,7 +9,7 @@ function getImage() {
         console.log('getImage ran')
     }
 
-function displayResults() {
+function displayResults(responeJson) {
     $('.img-results').replaceWith(`<img src="${responeJson.message}" alt="Random Doggo!" class="img-results">`)
     $('.results').removeClass('hidden');
     console.log('displayResults ran');
