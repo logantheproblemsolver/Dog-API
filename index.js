@@ -1,7 +1,7 @@
 'use strict';
 
 function getImage() {
-    fetch('https://dog.ceo/api/breeds/image/random/3')
+    fetch('https://dog.ceo/api/breeds/image/random')
         .then(response => response.json()) 
         .then(responseJson => 
             displayResults(responseJson))
@@ -10,7 +10,7 @@ function getImage() {
     }
 
 function displayResults() {
-    $('.img-results').replaceWith(`<img src="${responeJson.message}" class="img-results">`)
+    $('.img-results').replaceWith(`<img src="${responeJson.message}" alt="Random Doggo!" class="img-results">`)
     $('.results').removeClass('hidden');
     console.log('displayResults ran');
 }
