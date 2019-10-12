@@ -1,11 +1,9 @@
 'use strict';
 
 let select = document.getElementById('breedSelect')
-let number = $('.inputs').val()
 
 
-function getImage() {
-    console.log(number)
+function getImage(number) {
     fetch(`https://dog.ceo/api/breeds/image/random/"${number}"`)
         .then(response => response.json()) 
         .then(responseJson => 
@@ -21,8 +19,10 @@ function displayResults(responeJson) {
 
 function pressSubmit() {
     $('.submit').on('click', function(s) {
-        s.preventDefault();
-        getImage();
+        let number = $('.inputs').val()
+        console.log(number);
+        s.preventDefault(); 
+        getImage(number);
     });
 }
 
