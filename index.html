@@ -12,23 +12,8 @@
         <p>You can choose how many random images you want or you can choose the type of dog breed!</p>
         <form class="dogPicks">
             <fieldset>
-
-                <input type="submit" class="submit" value="Submit"/>
-            </fieldset>
-        </form>
-        <section class="results hidden">
-            <h2>Look at this dog!</h2>
-            <img class="img-results" alt="The Dog Holder">
-        </section>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="index.js"></script>
-    </body>
-</html>
-
-
-
-<!--                 <input class="inputs numberValue="How many random dog pics would you like at a time?" type="number" placeholder="3" min="1" max="50">
-                <select class="inputs breeds" selected="">
+                <input class="inputs" numberValue="3" id="numberDogs" type="number" placeholder="3" min="1" max="50"> 
+                <select class="inputs breeds" selected="" id="breedSelect">
                     <option value="">Random Dog</option>
                     <option value="affenpinscher">affenpinscher</option>
                     <option value="african">african</option>
@@ -165,4 +150,16 @@
                     <option value="weimaraner">weimaraner</option>
                     <option value="whippet">whippet</option>
                     <option value="irish wolfhound">irish wolfhound</option>                 
-                </select> -->
+                </select> 
+                <input type="submit" class="submit" value="Submit"/>
+            </fieldset>
+        </form>
+        <section class="results hidden">
+            <h2>Look at this dog!</h2>
+            <img class="img-results" alt="The Dog Holder">
+        </section>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>
+

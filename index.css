@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    text-align: center;
+}
+
 form {
     width: 500px;
     height: 100px;
@@ -9,10 +13,18 @@ form {
     text-align: center;
 }
 
+
+button {
+    width: 50px;
+    height: 20px;
+}
+
+
 .results {
     margin: auto auto;
     width: 800px;
     height: auto;
+    text-align: center;
 }
 
 
@@ -20,3 +32,8 @@ form {
     display: none;
 }
 
+
+
+.img-results {
+    display: inline;
+}
