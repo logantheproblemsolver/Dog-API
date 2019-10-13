@@ -44,9 +44,8 @@ select {
 
 .results {
     margin: auto auto;
-    width: 800px;
-    height: auto;
     text-align: center;
+    display: inline;
 }
 
 
@@ -54,8 +53,3 @@ select {
     display: none;
 }
 
-
-
-.img-results {
-    display: inline;
-}

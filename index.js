@@ -9,16 +9,22 @@ function getImage(number, select) {
                 displayResults(responseJson))
             .catch(error => alert('Please check your internet or the server might be down.'));
     } else {
-    fetch(`https://dog.ceo/api/breed/${select}/images/random/${number}`)
-        .then(response => response.json()) 
-        .then(responseJson => 
-            displayResults(responseJson))
-        .catch(error => alert('Please check your internet or the server might be down.'));
+        fetch(`https://dog.ceo/api/breed/${select}/images/random/${number}`)
+            .then(response => response.json())
+            .then(responseJson => 
+                displayResults(responseJson))
+            .catch(error => alert('Please check your internet or the server might be down.'));
     }
 }
 
-function displayResults(responeJson) {
-    $('.img-results').replaceWith(`<img src="${responeJson.message}" alt="Random Doggo!" class="img-results">`)
+
+
+function displayResults(responseJson) {
+    $('.results').append(`<h2>Look at this dog!</h2>`)
+    responseJson.message.forEach( dogs => {
+    $('.results').append(`
+    <img src="${dogs}" alt="Random Doggo!" class="img-results">`) 
+    });
     $('.results').removeClass('hidden');
 }
 
@@ -27,9 +33,9 @@ function pressSubmit() {
         let breed = $('.breeds').val().replace('-', '/');
         let select = breed;
         let number = $('.inputs').val();
-        console.log(select);
         s.preventDefault(); 
         getImage(number, select);
+        $('.results').empty();
     });
 }
 
