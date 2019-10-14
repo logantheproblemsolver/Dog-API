@@ -2,19 +2,27 @@
 
 
 function getImage(number, select) {
-    if (select===""){
-        fetch(`https://dog.ceo/api/breeds/image/random/${number}`)
-            .then(response => response.json()) 
-            .then(responseJson => 
-                displayResults(responseJson))
-            .catch(error => alert('Please check your internet or the server might be down.'));
-    } else {
-        fetch(`https://dog.ceo/api/breed/${select}/images/random/${number}`)
-            .then(response => response.json())
-            .then(responseJson => 
-                displayResults(responseJson))
-            .catch(error => alert('Please check your internet or the server might be down.'));
-    }
+    if (number > 50) {
+        alert('The maximum is 50');
+        return;
+    } if (number < 1) {
+        alert('The minimum is 1')
+    } 
+    else {
+        if (select===""){
+            fetch(`https://dog.ceo/api/breeds/image/random/${number}`)
+                .then(response => response.json()) 
+                .then(responseJson => 
+                    displayResults(responseJson))
+                .catch(error => alert('Please check your internet or the server might be down.'));
+        } else {
+            fetch(`https://dog.ceo/api/breed/${select}/images/random/${number}`)
+                .then(response => response.json())
+                .then(responseJson => 
+                    displayResults(responseJson))
+                .catch(error => alert('Please check your internet or the server might be down.'));
+        }
+};
 }
 
 
